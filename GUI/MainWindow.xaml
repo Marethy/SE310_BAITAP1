@@ -8,13 +8,11 @@
         Title="MainWindow" Height="653" Width="969">
     <Grid>
         <StackPanel>
-            <Button x:Name="BtnAddSheep" Content="Add Sheep" Click="BtnAddSheep_Click" Height="55" Width="385"/>
-            <Button x:Name="BtnAddCow" Content="Add cow" Click="BtnAddCow_Click" Height="55" Width="385"/>
-            <Button x:Name="BtnAddGoat" Content="Add Goat" Click="BtnAddGoat_Click" Height="55" Width="385"/>
             <Button x:Name="BtnFeedAnimals" Content="Feed Animals" Click="BtnFeedAnimals_Click" Height="98"/>
             <Button x:Name="BtnCollectMilk" Content="Collect Milk" Click="BtnCollectMilk_Click" Height="84"/>
             <Button x:Name="BtnReproduce" Content="Reproduce Animal" Click="BtnReproduce_Click" Height="102"/>
-            <TextBlock Name="StatisticsText" Margin="10" TextWrapping="Wrap"/>
+            <Button x:Name="BtnGetLiveStock" Content="Reproduce Animal" Click="BtnGetLiveStock_Click" Height="84"/>
+            <TextBox x:Name="StatisticsText" TextWrapping="Wrap" Text="TextBox" Width="659" Height="255"/>
         </StackPanel>
     </Grid>
 </Window>

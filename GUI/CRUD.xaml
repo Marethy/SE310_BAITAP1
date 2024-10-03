@@ -1,0 +1,74 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:GUI"
+    xmlns:DAL="clr-namespace:DAL;assembly=DAL" 
+    x:Class="GUI.CRUD"
+    mc:Ignorable="d"
+    Title="CRUD" Height="450" Width="800">
+
+    <Grid>
+        <TextBlock Text="Farm Management - Livestock" FontSize="20" FontWeight="Bold"
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" />
+
+        <!-- DataGrid to display Goat, Sheep, Cow -->
+        <DataGrid x:Name="LivestockDataGrid" AutoGenerateColumns="False" 
+                  SelectionChanged="LivestockDataGrid_SelectionChanged" 
+                  VerticalAlignment="Top" Margin="0,50,0,0" Width="796" 
+                  HorizontalAlignment="Center">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="150"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
+                <DataGridTextColumn Header="Milk Produced (L)" Binding="{Binding MilkProduced}" Width="150"/>
+                <DataGridTextColumn Header="Offspring" Binding="{Binding Offspring}" Width="100"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding LivestockType}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Form to Add/Update Livestock -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Width="400">
+            <TextBlock Text="Animal Details" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name:" Width="100"/>
+                <TextBox x:Name="NameTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Milk Produced (L):" Width="100"/>
+                <TextBox x:Name="MilkProducedTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Offspring:" Width="100"/>
+                <TextBox x:Name="OffspringTextBox" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Type:" Width="100"/>
+                <ComboBox x:Name="TypeComboBox" Width="200">
+                    <ComboBoxItem Content="Goat" Tag="2"/>
+                    <ComboBoxItem Content="Sheep" Tag="3"/>
+                    <ComboBoxItem Content="Cow" Tag="1"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- CRUD Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,41,10,0">
+            <Button Content="Create" Width="75" Margin="5" Click="CreateButton_Click"/>
+            <Button Content="Update" Width="75" Margin="5" Click="UpdateButton_Click"/>
+            <Button Content="Delete" Width="75" Margin="5" Click="DeleteButton_Click"/>
+            <Button Content="Method" Width="75" Margin="5" Click="MethodButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,19,44" Height="68" Width="240">
+            <ComboBox x:Name="View" SelectionChanged="View_SelectionChanged" Width="159" >
+                <ComboBoxItem Content="Goat" Tag="2"/>
+                <ComboBoxItem Content="Sheep" Tag="3"/>
+                <ComboBoxItem Content="Cow" Tag="1"/>
+                <ComboBoxItem Content="Livestock" Tag="0"/>
+            </ComboBox>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

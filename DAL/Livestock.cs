@@ -9,7 +9,7 @@ namespace DAL
     public abstract class Livestock
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public required string Name { get; set; }
         public int MilkProduced { get; set; }
         public int Offspring { get; set; }
 
@@ -18,7 +18,7 @@ namespace DAL
         public virtual int Reproduce()
         {
             Random random = new Random();
-            Offspring = random.Next(1, 5); // Random offspring count
+            Offspring = random.Next(1, 5); 
             return Offspring;
         }
 

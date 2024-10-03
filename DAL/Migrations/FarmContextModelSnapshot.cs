@@ -20,7 +20,7 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
+                
             modelBuilder.Entity("DAL.Livestock", b =>
                 {
                     b.Property<int>("Id")
